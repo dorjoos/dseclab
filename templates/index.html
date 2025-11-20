@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSEC-Lab | Dark Web Monitoring & Threat Intelligence</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00ff88;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Shield base -->
+                        <path d="M17 2L6 7v8c0 7.5 4.5 13 11 14.5 6.5-1.5 11-7 11-14.5V7L17 2z" stroke="url(#logoGradient)" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Checkmark -->
+                        <path d="M12 15l4 4 8-8" stroke="url(#logoGradient)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <!-- Center dot -->
+                        <circle cx="17" cy="21" r="1.8" fill="url(#logoGradient)"/>
+                        <!-- Network nodes -->
+                        <circle cx="8" cy="12" r="1.2" fill="url(#logoGradient)" opacity="0.7"/>
+                        <circle cx="26" cy="12" r="1.2" fill="url(#logoGradient)" opacity="0.7"/>
+                        <circle cx="8" cy="25" r="1.2" fill="url(#logoGradient)" opacity="0.7"/>
+                        <circle cx="26" cy="25" r="1.2" fill="url(#logoGradient)" opacity="0.7"/>
+                        <!-- Connection lines -->
+                        <path d="M8 12L12 15M26 12L22 15M8 25L12 21M26 25L22 21" stroke="url(#logoGradient)" stroke-width="1" opacity="0.4" stroke-linecap="round"/>
+                    </svg>
+                    <span>dsec-lab</span>
+                </div>
+                
+                <div class="nav-container">
+                    <nav class="nav-menu">
+                        <a href="/" class="nav-link active">Home</a>
+                        <a href="#" class="nav-link">Monitoring</a>
+                        <a href="#" class="nav-link">Threat Intel</a>
+                        <a href="/features" class="nav-link">Features</a>
+                        <a href="/benefits" class="nav-link">Benefits</a>
+                        <a href="#" class="nav-link">Pricing</a>
+                        <a href="/faq" class="nav-link">FAQ</a>
+                        <a href="/horizons" class="nav-link">
+                            <span>Protection</span>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </nav>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="btn-create-account">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <circle cx="9" cy="6" r="3" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            <path d="M3 15c0-3.5 2.5-6 6-6s6 2.5 6 6" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                        <span>Create Account</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Background decorative elements -->
+                <div class="bg-decoration">
+                    <div class="glow-circle"></div>
+                    <div class="connection-lines">
+                        <svg class="lines-svg" viewBox="0 0 1200 800" preserveAspectRatio="none">
+                            <path d="M200,100 Q400,200 600,150 T1000,100" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+                            <path d="M100,300 Q300,400 500,350 T900,300" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+                            <path d="M300,500 Q500,600 700,550 T1100,500" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+                            <circle cx="200" cy="100" r="3" fill="rgba(255,255,255,0.3)"/>
+                            <circle cx="600" cy="150" r="3" fill="rgba(255,255,255,0.3)"/>
+                            <circle cx="1000" cy="100" r="3" fill="rgba(255,255,255,0.3)"/>
+                            <circle cx="100" cy="300" r="3" fill="rgba(255,255,255,0.3)"/>
+                            <circle cx="500" cy="350" r="3" fill="rgba(255,255,255,0.3)"/>
+                            <circle cx="900" cy="300" r="3" fill="rgba(255,255,255,0.3)"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Feature Banner -->
+                <div class="feature-banner">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 1L2 4v4c0 3.5 2.5 6.5 5 7 2.5-.5 5-3.5 5-7V4L8 1z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    </svg>
+                    <span>Real-Time Threat Intelligence Monitoring Active</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="hero-text">
+                    <h1 class="hero-title">Advanced Threat Intelligence Platform</h1>
+                    <p class="hero-subtitle">
+                        Real-time dark web monitoring and threat detection powered by cutting-edge cybersecurity intelligence.
+                    </p>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="cta-buttons">
+                    <button class="btn-dark">
+                        <span>Start Threat Scan</span>
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                            <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="btn-light">View Intelligence Reports</button>
+                </div>
+
+                <!-- Search Form -->
+                <div class="search-container">
+                    <form id="searchForm" class="search-form">
+                        <div class="search-input-wrapper">
+                            <svg class="search-icon" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="m13 13-3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <input 
+                                type="text" 
+                                id="searchInput" 
+                                class="search-input" 
+                                placeholder="Enter email or domain..."
+                                autocomplete="off"
+                            />
+                            <button type="submit" class="search-btn">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Results Section -->
+                <div id="resultsSection" class="results-section hidden">
+                    <div class="results-header">
+                        <h2 class="results-title">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            </svg>
+                            <span id="resultsCount">0</span> Credential Matches Found
+                        </h2>
+                        <p class="results-subtitle" id="resultsQuery"></p>
+                    </div>
+                    <div class="table-container">
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Breach Date</th>
+                                    <th>Password</th>
+                                    <th>Exposed Data</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultsTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination-container">
+                        <div class="pagination-info">
+                            <span id="paginationInfo">Showing 0-0 of 0</span>
+                        </div>
+                        <div class="pagination-controls">
+                            <button id="prevPage" class="pagination-btn" disabled>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div id="paginationNumbers" class="pagination-numbers"></div>
+                            <button id="nextPage" class="pagination-btn">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loadingState" class="loading-state hidden">
+                    <div class="spinner"></div>
+                    <p>Scanning dark web databases...</p>
+                </div>
+
+                <!-- Error State -->
+                <div id="errorState" class="error-state hidden">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M12 8v4M12 16h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Key Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Benefits of the D-SEC Lab Platform</h2>
+                <p class="section-subtitle">Comprehensive threat intelligence and dark web monitoring</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 2L4 8v8c0 7 4.5 12.5 12 14 7.5-1.5 12-7 12-14V8L16 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Real-Time Monitoring</h3>
+                    <p class="benefit-description">Continuous surveillance of dark web sources for immediate threat detection</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 4L8 8v8c0 5 3 9 8 10 5-1 8-5 8-10V8l-8-4z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="16" cy="16" r="4" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Threat Intelligence Analysis</h3>
+                    <p class="benefit-description">Advanced AI-powered threat detection and credential exposure monitoring</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 2L2 9l14 7 14-7-14-7z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M2 23l14 7 14-7M2 16l14 7 14-7" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Dark Web Surveillance</h3>
+                    <p class="benefit-description">Continuous monitoring of underground markets and threat actor forums</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M16 10v6l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Real-Time Threat Alerts</h3>
+                    <p class="benefit-description">Instant notifications when your assets appear in threat intelligence feeds</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <rect x="4" y="8" width="24" height="18" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M4 12h24M12 8V4h8v4" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Threat Intelligence Reports</h3>
+                    <p class="benefit-description">Comprehensive security intelligence reports and actionable insights</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 4L6 10v8c0 6 4 11 10 12 6-1 10-6 10-12v-8l-10-6z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="benefit-title">Enterprise Threat Intelligence</h3>
+                    <p class="benefit-description">Scalable threat intelligence platform for enterprise security operations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infographic Section -->
+    <section class="infographic-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Threat Intelligence Overview</h2>
+                <p class="section-subtitle">Visual insights into dark web monitoring</p>
+            </div>
+            <div class="infographic-content">
+                <div class="infographic-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">2.5M+</div>
+                        <div class="stat-label">Credentials Monitored</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">150K+</div>
+                        <div class="stat-label">Threats Detected</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">99.9%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">24/7</div>
+                        <div class="stat-label">Monitoring</div>
+                    </div>
+                </div>
+                <div class="infographic-chart">
+                    <div class="threat-timeline">
+                        <div class="timeline-header">
+                            <h3 class="timeline-title">Threat Activity Timeline</h3>
+                            <p class="timeline-subtitle">Real-time threat detection over the past 12 months</p>
+                        </div>
+                        <div class="timeline-chart">
+                            <div class="timeline-months">
+                                <div class="month-label">Jan</div>
+                                <div class="month-label">Feb</div>
+                                <div class="month-label">Mar</div>
+                                <div class="month-label">Apr</div>
+                                <div class="month-label">May</div>
+                                <div class="month-label">Jun</div>
+                                <div class="month-label">Jul</div>
+                                <div class="month-label">Aug</div>
+                                <div class="month-label">Sep</div>
+                                <div class="month-label">Oct</div>
+                                <div class="month-label">Nov</div>
+                                <div class="month-label">Dec</div>
+                            </div>
+                            <div class="timeline-bars">
+                                <div class="timeline-bar" style="height: 65%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                                <div class="timeline-bar" style="height: 78%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                                <div class="timeline-bar" style="height: 85%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                                <div class="timeline-bar" style="height: 72%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                                <div class="timeline-bar" style="height: 90%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                                <div class="timeline-bar" style="height: 88%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                                <div class="timeline-bar" style="height: 82%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                                <div class="timeline-bar" style="height: 95%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                                <div class="timeline-bar" style="height: 92%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                                <div class="timeline-bar" style="height: 88%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                                <div class="timeline-bar" style="height: 85%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                                <div class="timeline-bar" style="height: 90%">
+                                    <div class="bar-glow"></div>
+                                </div>
+                            </div>
+                            <div class="timeline-grid">
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                                <div class="grid-line"></div>
+                            </div>
+                        </div>
+                        <div class="timeline-stats">
+                            <div class="timeline-stat">
+                                <div class="stat-value">2,847</div>
+                                <div class="stat-label">Peak Threats</div>
+                            </div>
+                            <div class="timeline-stat">
+                                <div class="stat-value">1,234</div>
+                                <div class="stat-label">Avg Monthly</div>
+                            </div>
+                            <div class="timeline-stat">
+                                <div class="stat-value">+15%</div>
+                                <div class="stat-label">Trend</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credential Leak Dashboard KPIs Section -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Credential Leak Dashboard</h2>
+                <p class="section-subtitle">Real-time threat intelligence metrics</p>
+            </div>
+            <div class="dashboard-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 2L4 8v8c0 7 4.5 12.5 12 14 7.5-1.5 12-7 12-14V8L16 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M12 14l4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="kpi-value">12,441</div>
+                    <div class="kpi-label">Total Exposed Credentials</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
+                            <rect x="8" y="12" width="16" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M12 12V8a4 4 0 0 1 8 0v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="16" cy="18" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="kpi-value">63%</div>
+                    <div class="kpi-label">Plaintext Password Rate</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 6v6l4 4M16 26v-6l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6 16h6l4-4M26 16h-6l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="16" cy="16" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="kpi-value">27%</div>
+                    <div class="kpi-label">Repeated Exposures</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
+                            <path d="M12 4h8v4h-8V4z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M10 8h12v18a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2V8z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M14 14h4M14 18h4M14 22h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="kpi-value">3,212</div>
+                    <div class="kpi-label">Infostealer Logs This Month</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M16 8v16M8 16h16M11.31 11.31l9.38 9.38M20.69 11.31l-9.38 9.38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="16" cy="16" r="2" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="kpi-value">488</div>
+                    <div class="kpi-label">Dark Web Mentions</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 4L4 8v8c0 7 4.5 12.5 12 14 7.5-1.5 12-7 12-14V8L16 4z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M16 10v6M16 20h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="kpi-value">1,102</div>
+                    <div class="kpi-label">High-Risk Credentials</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">
+                        <svg width="48" height="48" viewBox="0 0 32 32" fill="none">
+                            <rect x="6" y="8" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M6 12h20M12 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="16" cy="17" r="2" fill="currentColor"/>
+                            <path d="M12 22h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="kpi-value">9</div>
+                    <div class="kpi-label">VIP Users Exposed</div>
+                </div>
+                <div class="kpi-card" style="opacity: 0.3; pointer-events: none;">
+                    <!-- Empty placeholder card -->
+                </div>
+            </div>
+            <div class="dashboard-charts">
+                <div class="chart-card">
+                    <h3 class="chart-card-title">Top Stealer Sources</h3>
+                    <div class="pie-chart-container">
+                        <div class="pie-chart">
+                            <svg class="pie-svg" viewBox="0 0 200 200">
+                                <circle class="pie-background" cx="100" cy="100" r="80" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="40"/>
+                                <circle class="pie-segment" cx="100" cy="100" r="80" fill="none" stroke="#ff6464" stroke-width="40" stroke-dasharray="188.5 502.65" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
+                                <circle class="pie-segment" cx="100" cy="100" r="80" fill="none" stroke="#ff9600" stroke-width="40" stroke-dasharray="125.66 502.65" stroke-dashoffset="-188.5" transform="rotate(-90 100 100)"/>
+                                <circle class="pie-segment" cx="100" cy="100" r="80" fill="none" stroke="#ffc800" stroke-width="40" stroke-dasharray="94.25 502.65" stroke-dashoffset="-314.16" transform="rotate(-90 100 100)"/>
+                                <circle class="pie-segment" cx="100" cy="100" r="80" fill="none" stroke="#6496ff" stroke-width="40" stroke-dasharray="62.83 502.65" stroke-dashoffset="-408.41" transform="rotate(-90 100 100)"/>
+                                <circle class="pie-segment" cx="100" cy="100" r="80" fill="none" stroke="rgba(0, 255, 136, 0.3)" stroke-width="40" stroke-dasharray="40.21 502.65" stroke-dashoffset="-471.24" transform="rotate(-90 100 100)"/>
+                            </svg>
+                            <div class="pie-center">
+                                <div class="pie-center-value">100%</div>
+                                <div class="pie-center-label">Total</div>
+                            </div>
+                        </div>
+                        <div class="pie-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #ff6464;"></div>
+                                <div class="legend-info">
+                                    <div class="legend-name">RedLine</div>
+                                    <div class="legend-value">38%</div>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #ff9600;"></div>
+                                <div class="legend-info">
+                                    <div class="legend-name">Raccoon</div>
+                                    <div class="legend-value">24%</div>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #ffc800;"></div>
+                                <div class="legend-info">
+                                    <div class="legend-name">Lumma</div>
+                                    <div class="legend-value">18%</div>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #6496ff;"></div>
+                                <div class="legend-info">
+                                    <div class="legend-name">Vidar</div>
+                                    <div class="legend-value">12%</div>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: rgba(0, 255, 136, 0.3);"></div>
+                                <div class="legend-info">
+                                    <div class="legend-name">Others</div>
+                                    <div class="legend-value">8%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3 class="chart-card-title">Top Exposure Channels</h3>
+                    <div class="donut-chart-container">
+                        <div class="donut-chart">
+                            <svg class="donut-svg" viewBox="0 0 200 200">
+                                <circle class="donut-background" cx="100" cy="100" r="70" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="30"/>
+                                <circle class="donut-segment" cx="100" cy="100" r="70" fill="none" stroke="#00ffc8" stroke-width="30" stroke-dasharray="180.1 439.82" stroke-dashoffset="0" transform="rotate(-90 100 100)"/>
+                                <circle class="donut-segment" cx="100" cy="100" r="70" fill="none" stroke="#00ff88" stroke-width="30" stroke-dasharray="144.9 439.82" stroke-dashoffset="-180.1" transform="rotate(-90 100 100)"/>
+                                <circle class="donut-segment" cx="100" cy="100" r="70" fill="none" stroke="#00ffaa" stroke-width="30" stroke-dasharray="79.0 439.82" stroke-dashoffset="-325" transform="rotate(-90 100 100)"/>
+                                <circle class="donut-segment" cx="100" cy="100" r="70" fill="none" stroke="rgba(0, 255, 136, 0.3)" stroke-width="30" stroke-dasharray="35.2 439.82" stroke-dashoffset="-404" transform="rotate(-90 100 100)"/>
+                            </svg>
+                            <div class="donut-center">
+                                <div class="donut-center-value">100%</div>
+                                <div class="donut-center-label">Channels</div>
+                            </div>
+                        </div>
+                        <div class="donut-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #00ffc8;"></div>
+                                <div class="legend-info">
+                                    <div class="legend-name">Telegram</div>
+                                    <div class="legend-value">41%</div>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #00ff88;"></div>
+                                <div class="legend-info">
+                                    <div class="legend-name">Marketplaces</div>
+                                    <div class="legend-value">33%</div>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #00ffaa;"></div>
+                                <div class="legend-info">
+                                    <div class="legend-name">Forums</div>
+                                    <div class="legend-value">18%</div>
+                                </div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: rgba(0, 255, 136, 0.3);"></div>
+                                <div class="legend-info">
+                                    <div class="legend-name">Paste Sites</div>
+                                    <div class="legend-value">8%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Common questions about our threat intelligence platform</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Та ямар эх сурвалжаас мэдээлэл цуглуулдаг вэ?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Infostealer-үүдийн лог, форум бичлэг, Telegram сувгууд, darknet захууд, paste сайтууд.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Манай байгууллагын өгөгдлийг бусдад харуулах уу?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Бүх өгөгдлийг зөвхөн таны customer_id-ээр шүүлт хийж, тусгаарласан байдлаар л харуулна.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Туршилт хийхэд юу хэрэгтэй вэ?</span>
+                        <svg class="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Домэйн эсвэл VIP имэйлүүдийг оруулна — бид таны төлөвлөгөөнд тохируулж 14 хоногийн DEMO өгнө.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Indicators -->
+    <div class="bottom-indicators">
+        <div class="scroll-indicator">
+            <div class="scroll-circle">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 4v8M8 12l4-4M8 12L4 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span>02/03 . Scroll down</span>
+        </div>
+        <div class="progress-indicator">
+            <span>Security horizons</span>
+            <div class="progress-bars">
+                <div class="progress-bar active"></div>
+                <div class="progress-bar"></div>
+                <div class="progress-bar"></div>
+                <div class="progress-bar"></div>
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logos">
+                <div class="footer-logo">Tetst</div>
+                <div class="footer-logo">test</div>
+                <div class="footer-logo">test App</div>
+                <div class="footer-logo">tset</div>
+                <div class="footer-logo">test</div>
+                <div class="footer-logo">test</div>
+                <div class="footer-logo">test</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
+
