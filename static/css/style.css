@@ -1935,29 +1935,33 @@ body {
 
 .timeline-header {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
 }
 
 .timeline-title {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: 700;
     color: var(--text-primary);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
 }
 
 .timeline-subtitle {
     font-size: 14px;
     color: var(--text-secondary);
+    opacity: 0.8;
+    letter-spacing: 0.3px;
 }
 
 .timeline-chart {
     position: relative;
-    height: 200px;
-    margin-bottom: 24px;
-    padding: 0 20px;
-    background: #000000;
+    height: 240px;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: rgba(26, 26, 26, 0.6);
+    backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 42px;
     overflow: hidden;
 }
@@ -1976,37 +1980,37 @@ body {
     font-size: 11px;
     color: var(--text-secondary);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 500;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+    opacity: 0.7;
 }
 
 .timeline-bars {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    height: 100%;
-    gap: 4px;
+    height: calc(100% - 30px);
+    gap: 6px;
     position: relative;
     z-index: 1;
-    padding: 20px 10px 40px;
+    padding: 0 4px 30px;
 }
 
 .timeline-bar {
     flex: 1;
-    min-width: 12px;
-    max-width: 16px;
+    min-width: 8px;
+    max-width: 20px;
     background: linear-gradient(180deg, 
-        rgba(0, 255, 200, 1) 0%, 
-        rgba(0, 255, 180, 0.95) 30%,
-        rgba(0, 220, 160, 0.9) 60%,
-        rgba(0, 180, 140, 0.85) 100%);
-    border-radius: 42px;
+        rgba(0, 255, 136, 1) 0%, 
+        rgba(0, 255, 136, 0.9) 50%,
+        rgba(0, 200, 100, 0.8) 100%);
+    border-radius: 8px 8px 0 0;
     position: relative;
-    transition: all 0.3s ease;
-    animation: growTimelineBar 1s ease-out both;
-    box-shadow: 0 0 15px rgba(0, 255, 200, 0.3),
-                0 0 30px rgba(0, 255, 180, 0.15);
-    filter: brightness(1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: growTimelineBar 1.2s ease-out both;
+    box-shadow: 0 -2px 12px rgba(0, 255, 136, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    cursor: pointer;
 }
 
 .timeline-bar:nth-child(1) { animation-delay: 0.05s; }
@@ -2033,10 +2037,14 @@ body {
 }
 
 .timeline-bar:hover {
-    filter: brightness(1.3);
-    box-shadow: 0 0 25px rgba(0, 255, 200, 0.5),
-                0 0 50px rgba(0, 255, 180, 0.3);
-    transform: scaleX(1.15);
+    background: linear-gradient(180deg, 
+        rgba(0, 255, 136, 1) 0%, 
+        rgba(0, 255, 136, 1) 50%,
+        rgba(0, 220, 120, 0.9) 100%);
+    box-shadow: 0 -4px 20px rgba(0, 255, 136, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    z-index: 2;
 }
 
 .bar-glow {
@@ -2044,18 +2052,19 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 20%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
-    border-radius: 42px 42px 42px 42px;
-    opacity: 0.6;
+    height: 30%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, transparent 100%);
+    border-radius: 8px 8px 0 0;
+    opacity: 0.8;
+    pointer-events: none;
 }
 
 .timeline-grid {
     position: absolute;
     top: 0;
-    left: 20px;
-    right: 20px;
-    bottom: 0;
+    left: 28px;
+    right: 28px;
+    bottom: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -2065,7 +2074,8 @@ body {
 
 .grid-line {
     height: 1px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 1px;
 }
 
 .timeline-stats {

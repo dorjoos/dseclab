@@ -42,7 +42,7 @@ http://localhost:8000
 
 ## Usage
 
-1. Enter an email address (e.g., `user@example.com`) or domain (e.g., `example.com`) in the search box
+1. Enter an email address (e.g., `user@testbank.mn`) or domain (e.g., `testbank.mn`) in the search box
 2. Click "Search" or press Enter
 3. View the results showing any matched leaked credentials, including:
    - Email address
@@ -58,19 +58,19 @@ Search for leaked credentials.
 **Request Body:**
 ```json
 {
-  "query": "user@example.com"
+  "query": "user@testbank.mn"
 }
 ```
 
 **Response:**
 ```json
 {
-  "query": "user@example.com",
+  "query": "user@testbank.mn",
   "query_type": "email",
   "matches_found": 3,
   "credentials": [
     {
-      "email": "user@example.com",
+      "email": "user@testbank.mn",
       "password": "••••••••",
       "source": "LinkedIn 2012",
       "breach_date": "2012-05-05",
